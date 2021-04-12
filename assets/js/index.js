@@ -33,9 +33,9 @@ function getUserInfo() {
         },
         // 用户权限问题
         // complete(response) {
-        //     // console.log(response);
+        //     console.log(response);
         //     // 使用解构 这样就不用写确定的值作为判断
-        //     const {status,message}=response.responseJSON;
+        //     // const {status,message}=response.responseJSON;
         //     if(response.responseJSON.status===status&&response.responseJSON.message===message){
         //         localStorage.removeItem('token');
         //         location.href='../home/login.html';
