@@ -31,7 +31,7 @@ $(function () {
         $.ajax({
             type: 'post',
             data:data,
-            url:'http://api-breakingnews-web.itheima.net/api/reguser',
+            url:'/api/reguser',
             success: function (res){
                 if(res.status !==0){
                    //提示功能
@@ -54,7 +54,7 @@ $(function () {
         $.ajax({
             type: 'post',
             data:data,
-            url:'http://api-breakingnews-web.itheima.net/api/login',
+            url:'/api/login',
             success: function (res){
                 if(res.status !==0){
                    //提示功能
@@ -62,7 +62,7 @@ $(function () {
                 };
                 layer.msg('登录成功');
                 //将登陆得到的token 字符串  保存到本地
-                localStorage.setItem('token',res.token);
+                localStorage.setItem('token',res.token); 
                 // 跳转登录
                 location.href='../home/index.html';
             }
