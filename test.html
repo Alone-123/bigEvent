@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点击支付</button>
+    <script>
+        const btn = document.getElementById('btn');
+        // function once(fn) {
+        //   let isDone = false;
+        //   return function (...num) {
+        //     if (isDone) return;
+        //     fn.apply(this, num)
+        //     isDone = true;
+        //   }
+        // }
+        // -----------业务代码
+        // const pay = once(function (money, dollar, t) {
+        //   console.log(this);
+        //   console.log(`支付成功了${money}元,${dollar}$,${t}t`);
+        // })
+        // const obj = {
+        //   name: '黑马'
+        // }
+        // obj.pay = pay;
+        // btn.addEventListener('click', function () {
+        //   obj.pay(5, 10, 15)
+        // })
+
+        function once(fn) {
+            let isDone = false;
+            return function (num) {
+                if (isDone) return;
+                fn(num)
+                isDone = true;
+            }
+        }
+        const pay = once(function (money) {
+            console.log(`支付成功了${money}元`);
+        })
+        btn.addEventListener('click', function () {
+            pay(5);
+        })
+    </script>
+</body>
+
+</html>

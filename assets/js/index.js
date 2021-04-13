@@ -46,7 +46,7 @@ function getUserInfo() {
 
 // 渲染用户数据
 function render(user) {
-    console.log(user);
+    // console.log(user);
     const name=user.nickname || user.username;
     // 欢迎标语
     $('#welcome').html('欢迎 &nbsp;&nbsp;'+name);
