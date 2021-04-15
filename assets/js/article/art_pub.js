@@ -49,7 +49,7 @@ $(function () {
 
         // 根据文件，创建对应的 URL 地址
         const newImgURL = URL.createObjectURL(files[0])
-        console.log(URL);
+        // console.log(URL);
         // 为裁剪区域重新设置图片
         $image
             .cropper('destroy') // 销毁旧的裁剪区域
@@ -63,7 +63,6 @@ $(function () {
     $('#btnSave2').on('click', function () {
         art_state = '草稿';
     })
-    console.log(art_state);
     $('#form_babel').on('submit', function (e) {
         e.preventDefault();
         // 创建FormDataa 对象
