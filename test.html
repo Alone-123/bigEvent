@@ -10,7 +10,7 @@
 
 <body>
     <button id="btn">点击支付</button>
-    <script>
+    <!-- <script>
         const btn = document.getElementById('btn');
         // function once(fn) {
         //   let isDone = false;
@@ -47,6 +47,54 @@
         btn.addEventListener('click', function () {
             pay(5);
         })
+    </script> -->
+    <script>
+        const obj = {
+            user: '234',
+            name: [
+                2,
+                4,
+                5,
+                {
+                    age: 18,
+                    heima: 'test',
+                },
+            ],
+            msg: {
+                info: [4, 5, 6],
+                ch: {
+                    cyz: [
+                        3,
+                        4,
+                        5,
+                        {
+                            ch: [4, 5, 5, 6],
+                        },
+                    ],
+                },
+            },
+        };
+        let o = {}
+    //利用递归实现深拷贝
+    function deepObj(newObj,oldObj) {
+        for (let k in oldObj){
+            const item=oldObj[k];
+            if(item instanceof Array){
+                newObj[k]=[]; 
+                deepObj(newObj[k],item); 
+            }else if(item instanceof Object){
+                newObj[k]= {}; 
+                // k=k.toUpperCase();
+                console.log(k.toUpperCase(),k);
+                deepObj(newObj[k],item); 
+            }else{
+                newObj[k]=item;
+            }
+        }
+        // return newObj;
+    }
+    deepObj(o,obj);
+    console.log(o);
     </script>
 </body>
 
